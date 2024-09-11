@@ -1,6 +1,7 @@
 import typing as _typing
 
 import click as _click
+import getoptify as _getoptify
 
 __all__ = ["calculate", "main", "score"]
 
@@ -43,6 +44,12 @@ def score(seq: _typing.Iterable):
 calculate = score  # for legacy
 
 
+@_getoptify.command(
+    shortopts="hV",
+    longopts=["help", "version", "format="],
+    allow_argv=True,
+    gnu=True,
+)
 @_click.command(add_help_option=False)
 @_click.option(
     "--format", "f", help="format of the output", default=".5f", show_default=True
