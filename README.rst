@@ -25,7 +25,7 @@ Links
 -----
 
 * `Download <https://pypi.org/project/gravy/#files>`_
-* `Source <https://github.com/johannes-programming/gravy>`_ 
+* `Source <https://github.com/johannes-programming/gravy>`_
 
 Credits
 -------
