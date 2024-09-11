@@ -16,6 +16,30 @@ To install ``gravy``, you can use ``pip``. Open your terminal and run:
 
     pip install gravy
 
+Usage
+-----
+
+CLI
+~~~
+
+.. code-block:: bash
+
+    python3 -m gravy CYIQNCPLG
+    # output: 0.33333
+    # the formatting can be change with the option '--format'
+
+Python
+~~~~~~
+
+.. code-block:: python
+
+    import gravy
+    x = gravy.score("CYIQNCPLG")
+    y = format(x, ".5f")
+    print(y)
+    # output: 0.33333
+    # the same format as the default in the CLI
+
 License
 -------
 
@@ -31,7 +55,7 @@ Links
 Credits
 -------
 
-* Author: Johannes
-* Email: johannes-programming@mailfence.com
+* Author: `Johannes <http://johannes-programming.website>`_
+* Email: `johannes-programming@mailfence.com <mailto:johannes-programming@mailfence.com>`_
 
 Thank you for using ``gravy``!
