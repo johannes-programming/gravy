@@ -10,7 +10,7 @@ Calculate the GRAVY score of a amino acid sequence.
 Installation
 ------------
 
-To install gravy, you can use `pip`. Open your terminal and run:
+To install ``gravy``, you can use ``pip``. Open your terminal and run:
 
 .. code-block:: bash
 
@@ -24,12 +24,14 @@ This project is licensed under the MIT License.
 Links
 -----
 
+* `Documentation <https://pypi.org/project/gravy>`_
 * `Download <https://pypi.org/project/gravy/#files>`_
 * `Source <https://github.com/johannes-programming/gravy>`_
 
 Credits
 -------
-- Author: Johannes Programming
-- Email: johannes-programming@posteo.org
 
-Thank you for using gravy!
+* Author: Johannes
+* Email: johannes-programming@mailfence.com
+
+Thank you for using ``gravy``!
