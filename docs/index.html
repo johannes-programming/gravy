@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>gravy</title>
+    </head>
+    <body>
+        <div id="top"></div>
+        <div id="overview">
+            <h2>Overview</h2>
+            <p>Calculate the GRAVY score of an amino acid sequence.</p>
+        </div>
+        <div id="install"></div>
+        <div id="usage">
+            <h2>Usage</h2>
+            <h3>CLI</h3>
+            <pre><code>
+python3 -m gravy CYIQNCPLG
+# output: 0.33333
+# the formatting can be changed with the option '--format'
+
+</code></pre>
+            <h3>Python</h3>
+            <pre><code>
+import gravy
+x = gravy.score("CYIQNCPLG")
+y = format(x, ".5f")
+print(y)
+# output: 0.33333
+# the same format as the default in the CLI
+
+</code></pre>
+        </div>
+        <div id="testing"></div>
+        <div id="license"></div>
+        <div id="links"></div>
+        <div id="credits"></div>
+        <script src="https://www.johannes-programming.online/script.js"></script>
+        <script>
+            setupBasicProject();
+        </script>
+    </body>
+</html>
