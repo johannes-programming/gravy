@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gravy</title>
+    <link rel="stylesheet" href="https://www.johannes-programming.online/styles.css">
+</head>
+<body>
+
+    <h1><code>gravy</code></h1>
+
+    <h2>Overview</h2>
+    <p>Calculate the GRAVY score of an amino acid sequence.</p>
+
+    <h2>Installation</h2>
+    <p>
+        To install <code><a href="https://gravy.johannes-programming.online">gravy</a></code>, 
+        you can use <code>pip</code>. Open your terminal and run:
+    </p>
+    <pre><code>pip install gravy</code></pre>
+
+    <h2>Usage</h2>
+
+    <h3>CLI</h3>
+    <pre><code>python3 -m gravy CYIQNCPLG
+# output: 0.33333
+# the formatting can be changed with the option '--format'
+</code></pre>
+
+    <h3>Python</h3>
+    <pre><code>import gravy
+x = gravy.score("CYIQNCPLG")
+y = format(x, ".5f")
+print(y)
+# output: 0.33333
+# the same format as the default in the CLI
+</code></pre>
+
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License.</p>
+
+    <h2>Links</h2>
+    <ul>
+        <li><a href="https://gravy.johannes-programming.online">Documentation</a></li>
+        <li><a href="https://pypi.org/project/gravy/#files">Download</a></li>
+        <li><a href="https://github.com/johannes-programming/gravy">Source</a></li>
+    </ul>
+
+    <h2>Credits</h2>
+    <ul>
+        <li><a href="https://johannes-programming.online">Johannes</a></li>
+        <li><a href="mailto:johannes-programming@mailfence.com">johannes-programming@mailfence.com</a></li>
+    </ul>
+
+    <p>Thank you for using <code><a href="https://gravy.johannes-programming.online">gravy</a></code>!</p>
+
+</body>
+</html>
