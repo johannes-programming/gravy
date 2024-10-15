@@ -17,14 +17,14 @@ classifiers = [
 ]
 dependencies = [
     "click>=8.1.7",
-    "getoptify>=1.0.0",
+    "preparse>=0.0.3",
 ]
 description = "Calculate the GRAVY score of a amino acid sequence."
 keywords = []
 name = "gravy"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "1.0.11"
+version = "1.0.12"
 
 [project.license]
 file = "LICENSE.txt"
