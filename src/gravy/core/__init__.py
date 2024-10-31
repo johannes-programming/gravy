@@ -1,7 +1,6 @@
 from typing import *
 
 import click
-
 import preparse
 
 __all__ = ["calculate", "main", "score"]
