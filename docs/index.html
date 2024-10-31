@@ -4,39 +4,54 @@
         <title>gravy</title>
     </head>
     <body>
-        <div id="top"></div>
-        <div id="overview">
-            <h2>Overview</h2>
-            <p>Calculate the GRAVY score of an amino acid sequence.</p>
-        </div>
-        <div id="install"></div>
-        <div id="usage">
-            <h2>Usage</h2>
-            <h3>CLI</h3>
-            <pre><code>
-python3 -m gravy CYIQNCPLG
+        <dl class="heading0">
+            <dt>gravy</dt>
+            <dd>
+                <dl class="heading1">
+                    <dt>Overview</dt>
+                    <dd id="overviewCorpus">
+                        <p>This project calculates the GRAVY score of an amino acid sequence.</p>
+                    </dd>
+                    <dt>Installation</dt>
+                    <dd id="installCorpus"></dd>
+                    <dt>Usage</dt>
+                    <dd id="usageCorpus">
+                        <dl class="heading2">
+                            <dt>CLI</dt>
+                            <dd>
+                                <pre class="block"><code>python3 -m gravy CYIQNCPLG
 # output: 0.33333
-# the formatting can be changed with the option '--format'
-
-</code></pre>
-            <h3>Python</h3>
-            <pre><code>
-import gravy
+# the formatting can be changed with the option '--format'</code></pre>
+                            </dd>
+                            <dt>Python</dt>
+                            <dd>
+                                <pre class="block"><code>import gravy
 x = gravy.score("CYIQNCPLG")
 y = format(x, ".5f")
 print(y)
 # output: 0.33333
-# the same format as the default in the CLI
-
-</code></pre>
-        </div>
-        <div id="testing"></div>
-        <div id="license"></div>
-        <div id="links"></div>
-        <div id="credits"></div>
-        <script src="https://www.johannes-programming.online/script.js"></script>
-        <script>
-            setupBasicProject();
-        </script>
+# the same format as the default in the CLI</code></pre>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>Testing</dt>
+                    <dd id="testingCorpus"></dd>
+                    <dt>License</dt>
+                    <dd id="licenseCorpus"></dd>
+                    <dt>Links</dt>
+                    <dd id="linksCorpus"></dd>
+                    <dt>Impressum</dt>
+                    <dd id="impressumCorpus"></dd>
+                </dl>
+            </dd>
+        </dl>
     </body>
+    <script src="https://www.johannes-programming.online/script.js"></script>
+    <script>
+        setupInstallCorpus("gravy");
+        setupTestingCorpus("gravy");
+        setupLicenseCorpus("gravy");
+        setupLinksCorpus("gravy");
+        setupImpressumCorpus("gravy");
+    </script>
 </html>
