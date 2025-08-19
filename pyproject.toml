@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-    "setuptools>=61.0.0",
+    "setuptools>=61.0",
 ]
 
 [project]
@@ -21,15 +21,15 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "click>=8.2.1",
-    "preparse>=0.1.6",
+    "click>=8.2,<9",
+    "preparse",
 ]
 description = "This project calculates the GRAVY score of a amino acid sequence."
 keywords = []
 name = "gravy"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.13"
+version = "1.0.13+local"
 
 [project.license]
 file = "LICENSE.txt"
