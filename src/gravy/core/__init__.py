@@ -5,7 +5,7 @@ import preparse
 
 __all__ = ["calculate", "main", "score"]
 
-_VALUES = {
+_VALUES: dict = {
     "A": 1.8,
     "C": 2.5,
     "D": -3.5,
@@ -31,12 +31,16 @@ _VALUES = {
 }
 
 
-def score(seq: Iterable):
-    """Calculate the GRAVY score."""
-    answers = [_VALUES[str(k)] for k in seq]
-    answers = [v for v in answers if v is not None]
-    if len(answers):
-        return sum(answers) / len(answers)
+def score(seq: Iterable) -> float:
+    "This function calculates the GRAVY score."
+    l: list = list()
+    x: Any
+    for x in seq:
+        y = _VALUES[str(x)]
+        if y is not None:
+            l.append(y)
+    if len(l):
+        return sum(l) / len(l)
     else:
         return float("nan")
 
@@ -44,7 +48,7 @@ def score(seq: Iterable):
 calculate = score  # for legacy
 
 
-@preparse.PreParser(posix=False).click()
+@preparse.PreParser().click()
 @click.command(add_help_option=False)
 @click.option(
     "--format",
@@ -56,8 +60,8 @@ calculate = score  # for legacy
 @click.help_option("-h", "--help")
 @click.version_option(None, "-V", "--version")
 @click.argument("seq")
-def main(seq, f):
-    """calculate the GRAVY score of seq"""
-    ans = score(seq)
-    out = format(ans, f)
+def main(seq: Iterable, f: str) -> None:
+    "This command calculates the GRAVY score of seq."
+    ans: float = score(seq)
+    out: str = format(ans, f)
     click.echo(out)
