@@ -6,7 +6,7 @@ requires = [
 
 [project]
 authors = [
-    { email = "johannes-programming@mailfence.com", name = "Johannes" },
+    { email = "johannes.programming@gmail.com", name = "Johannes" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -21,15 +21,15 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "click>=8.1.7",
-    "preparse>=0.0.3",
+    "click>=8.2.1",
+    "preparse>=0.1.6",
 ]
 description = "This project calculates the GRAVY score of a amino acid sequence."
 keywords = []
 name = "gravy"
 readme = "README.rst"
-requires-python = ">=3.8"
-version = "1.0.12+local.3"
+requires-python = ">=3.11"
+version = "1.0.12+local.4"
 
 [project.license]
 file = "LICENSE.txt"
