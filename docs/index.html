@@ -8,26 +8,40 @@
             <dt><a>gravy</a></dt>
             <dd>
                 <dl class="heading1">
-                    <dt>Overview</dt>
+                    <dt id="overview">Overview</dt>
                     <dd id="overviewCorpus">
                         <p>This project calculates the GRAVY score of an amino acid sequence.</p>
                     </dd>
-                    <dt>Links</dt>
+                    <dt id="links">Links</dt>
                     <dd id="linksCorpus"></dd>
-                    <dt>Installation</dt>
+                    <dt id="install">Installation</dt>
                     <dd id="installCorpus"></dd>
-                    <dt>Usage</dt>
-                    <dd id="usageCorpus">
-                        <dl class="heading2">
-                            <dt>CLI</dt>
+                    <dt id="features">Features</dt>
+                    <dd id="featuresCorpus">
+                        <dl class="heading4">
+                            <dt id="calculate">gravy.calculate</dt>
                             <dd>
-                                <pre class="block"><code>python3 -m gravy CYIQNCPLG
+                                <p>
+                                    This module variable is an alias for <code><a href="#score">score</a></code> 
+                                    included for legacy.
+                                </p>
+                            </dd>
+                            <dt id="main">gravy.main</dt>
+                            <dd>
+                                <p>
+                                    This <code><a href="https://click.palletsprojects.com/en/stable/">click</a></code> 
+                                    command implements the CLI.
+                                </p>
+                                <pre class="block"><code># CLI
+python3 -m gravy CYIQNCPLG
 # output: 0.33333
 # the formatting can be changed with the option '--format'</code></pre>
                             </dd>
-                            <dt>Python</dt>
+                            <dt id="score">gravy.score(seq: Iterable) -&gt; float</dt>
                             <dd>
-                                <pre class="block"><code>import gravy
+                                <p>This function calculates the GRAVY score.</p>
+                                <pre class="block"><code># python
+import gravy
 x = gravy.score("CYIQNCPLG")
 y = format(x, ".5f")
 print(y)
@@ -36,29 +50,11 @@ print(y)
                             </dd>
                         </dl>
                     </dd>
-                    <dt id="features">Features</dt>
-                    <dd>
-                        <dl class="heading4">
-                            <dt>calculate</dt>
-                            <dd>
-                                <p>
-                                    This module variable is an alias for <code><a href="#score">score</a></code> 
-                                    included for legacy.
-                                </p>
-                            </dd>
-                            <dt>main</dt>
-                            <dd><p>This <code>click</code> command implements the CLI.</p></dd>
-                            <dt>score(seq: Iterable) -> float</dt>
-                            <dd>
-                                <p>This function calculates the GRAVY score.</p>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <dt>Testing</dt>
+                    <dt id="testing">Testing</dt>
                     <dd id="testingCorpus"></dd>
-                    <dt>License</dt>
+                    <dt id="license">License</dt>
                     <dd id="licenseCorpus"></dd>
-                    <dt>Impressum</dt>
+                    <dt id="impressum">Impressum</dt>
                     <dd id="impressumCorpus"></dd>
                 </dl>
             </dd>
