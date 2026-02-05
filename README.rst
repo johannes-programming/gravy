@@ -21,6 +21,12 @@ License
 
 This project is licensed under the MIT License.
 
+Links
+-----
+
+* `Download <https://pypi.org/project/gravy/#files>`_
+* `Source <https://github.com/johannes-programming/gravy>`_ 
+
 Credits
 -------
 - Author: Johannes Programming
