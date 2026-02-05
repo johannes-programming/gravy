@@ -17,16 +17,17 @@ class Util(enum.Enum):
     @functools.cached_property
     def data(self: Self) -> dict:
         "This cached property holds the cfg data."
-        text: str = resources.read_text("gravy.core", "cfg.toml")
-        ans: dict = tomllib.loads(text)
-        return ans
+        text: str
+        text = resources.read_text("gravy.core", "cfg.toml")
+        return tomllib.loads(text)
 
 
 def score(seq: Iterable) -> float:
     "This function calculates the GRAVY score."
-    l: list = list()
+    l: list
     x: Any
     y: Any
+    l = list()
     for x in seq:
         y = Util.util.data["values"][str(x)]
         if not math.isnan(y):
@@ -54,6 +55,8 @@ calculate = score  # for legacy
 @click.argument("seq")
 def main(seq: Iterable, f: str) -> None:
     "This command calculates the GRAVY score of seq."
-    ans: float = score(seq)
-    out: str = format(ans, f)
+    ans: float
+    out: str
+    ans = score(seq)
+    out = format(ans, f)
     click.echo(out)

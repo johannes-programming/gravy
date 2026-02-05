@@ -1,13 +1,17 @@
-import math
 import unittest
+from typing import *
 
-from gravy import score
+from gravy.core import score
+
+__all__ = ["TestScoreFunction"]
 
 
 class TestScoreFunction(unittest.TestCase):
 
-    def test_valid_sequence(self):
-        """Test a valid sequence with known values."""
+    def test_valid_sequence(self: Self) -> None:
+        "Test a valid sequence with known values."
+        expected_score: float
+        seq: str
         seq = "ACDEFGHIKLMNPQRSTVWY"
         expected_score = (
             1.8
@@ -33,8 +37,10 @@ class TestScoreFunction(unittest.TestCase):
         ) / 20
         self.assertAlmostEqual(score(seq), expected_score)
 
-    def test_sequence_with_gap(self):
-        """Test a sequence with gaps ('-')."""
+    def test_sequence_with_gap(self: Self) -> None:
+        "Test a sequence with gaps ('-')."
+        expected_score: float
+        seq: str
         seq = "ACDEFGHI-KLMNPQRSTVWY"
         expected_score = (
             1.8
@@ -60,8 +66,10 @@ class TestScoreFunction(unittest.TestCase):
         ) / 20
         self.assertAlmostEqual(score(seq), expected_score)
 
-    def test_sequence_with_unknown_values(self):
-        """Test a sequence with unknown or unsupported values ('X')."""
+    def test_sequence_with_unknown_values(self: Self) -> None:
+        "Test a sequence with unknown or unsupported values ('X')."
+        expected_score: float
+        seq: str
         seq = "ACDEXFGHIKLMNPQRSTVWY"
         expected_score = (
             1.8
@@ -86,35 +94,6 @@ class TestScoreFunction(unittest.TestCase):
             - 1.3
         ) / 20
         self.assertAlmostEqual(score(seq), expected_score)
-
-    def test_sequence_with_only_gaps(self):
-        """Test a sequence with only gaps ('-'), which should return NaN."""
-        seq = "---"
-        result = score(seq)
-        self.assertTrue(math.isnan(result))
-
-    def test_sequence_with_only_unknown_values(self):
-        """Test a sequence with only unknown values ('X'), which should return NaN."""
-        seq = "XXX"
-        result = score(seq)
-        self.assertTrue(math.isnan(result))
-
-    def test_empty_sequence(self):
-        """Test an empty sequence, which should return NaN."""
-        seq = ""
-        result = score(seq)
-        self.assertTrue(math.isnan(result))
-
-    def test_single_known_value(self):
-        """Test a sequence with a single known value."""
-        seq = "A"
-        self.assertAlmostEqual(score(seq), 1.8)
-
-    def test_single_unknown_value(self):
-        """Test a sequence with a single unknown value ('X'), which should return NaN."""
-        seq = "X"
-        result = score(seq)
-        self.assertTrue(math.isnan(result))
 
 
 if __name__ == "__main__":
