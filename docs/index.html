@@ -8,9 +8,9 @@
             <dt>
                 <a>gravy</a>
                 <p>
-                    Version:
+                    Minor Version:
                     <select id="version">
-                        <option selected>1.0.18</option>
+                        <option selected>1.0</option>
                     </select>
                 </p>
             </dt>
@@ -26,15 +26,15 @@
                     <dd id="installCorpus"></dd>
                     <dt id="features">Features</dt>
                     <dd id="featuresCorpus">
-                        <dl class="heading4">
-                            <dt id="calculate">gravy.calculate</dt>
+                        <dl class="heading4" version="1.0">
+                            <dt id="1--calculate">gravy.calculate</dt>
                             <dd>
                                 <p>
                                     This module variable is an alias for <code><a href="#score">score</a></code> 
                                     included for legacy.
                                 </p>
                             </dd>
-                            <dt id="main">gravy.main</dt>
+                            <dt id="1--main">gravy.main</dt>
                             <dd>
                                 <p>
                                     This <code><a href="https://click.palletsprojects.com/en/stable/">click</a></code> 
@@ -45,7 +45,7 @@ python3 -m gravy CYIQNCPLG
 # output: 0.33333
 # the formatting can be changed with the option '--format'</code></pre>
                             </dd>
-                            <dt id="score">gravy.score(seq: Iterable) -&gt; float</dt>
+                            <dt id="1--score">gravy.score(seq: Iterable) -&gt; float</dt>
                             <dd>
                                 <p>This function calculates the GRAVY score.</p>
                                 <pre class="block"><code># python
@@ -56,7 +56,7 @@ print(y)
 # output: 0.33333
 # the same format as the default in the CLI</code></pre>
                             </dd>
-                            <dt id="test">gravy.test() -> unittest.TextTestResult</dt>
+                            <dt id="1--test">gravy.test() -> unittest.TextTestResult</dt>
                             <dd class="testingCorpus"></dd>
                         </dl>
                     </dd>
