@@ -1,0 +1,91 @@
+Overview
+--------
+
+This project calculates the GRAVY score of an amino acid sequence.
+
+Installation
+------------
+
+To install ``gravy``, you can use ``pip``.
+Open your terminal and run:
+
+.. code-block:: shell
+
+    pip install gravy
+
+Typing
+------
+
+This project is (not strictly) typed with ``mypy``.
+
+.. container:: versionadded
+
+    **Added in version 1.1.**
+
+Features
+--------
+
+``gravy.calculate``
+~~~~~~~~~~~~~~~~~~~
+
+This module variable is an alias for score included for legacy.
+
+``gravy.main``
+~~~~~~~~~~~~~~
+
+This click command implements the CLI.
+
+.. code-block:: shell
+
+    # CLI
+    python3 -m gravy CYIQNCPLG
+    # output: 0.33333
+    # the formatting can be changed with the option '--format'
+
+``gravy.score(seq: Iterable) -> float``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function calculates the GRAVY score.
+
+.. code-block:: python
+
+    # python
+    import gravy
+    x = gravy.score("CYIQNCPLG")
+    y = format(x, ".5f")
+    print(y)
+    # output: 0.33333
+    # the same format as the default in the CLI
+
+``gravy.tests.test() -> unittest.TextTestResult``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This project can be tested through its ``test`` function.
+
+.. code-block:: python
+
+    import gravy.tests
+    gravy.tests.test()
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+Links
+-----
+
+- Download: https://pypi.org/project/gravy/#files
+- Index: https://pypi.org/project/gravy/
+- Source: https://github.com/johannes-programming/gravy/
+- Website: https://gravy.johannes-programming.online/
+
+Impressum
+---------
+
+**Johannes Programming**
+
+- Name: Johannes
+- Email: johannes.programming@gmail.com
+- Homepage: https://www.johannes-programming.online/
+- Gravatar: https://www.johannes-programming.fyi/

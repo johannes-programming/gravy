@@ -23,7 +23,7 @@ class Util(enum.Enum):
 
 
 class TestScoreFunction(unittest.TestCase):
-    def go(self: Self, x: str, y: str, /) -> None:
+    def go(self: Self, x: Any, y: Any, /) -> None:
         z: float
         z = score(x)
         if math.isnan(y):
