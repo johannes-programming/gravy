@@ -15,7 +15,7 @@ class Util(enum.Enum):
     util = None
 
     @functools.cached_property
-    def data(self: Self) -> dict:
+    def data(self: Self) -> dict[str, Any]:
         "This cached property holds the cfg data."
         text: str
         text = resources.read_text("gravy.tests", "testdata.toml")
@@ -23,7 +23,7 @@ class Util(enum.Enum):
 
 
 class TestScoreFunction(unittest.TestCase):
-    def go(self: Self, x: str, y: str, /) -> None:
+    def go(self: Self, x: Any, y: Any, /) -> None:
         z: float
         z = score(x)
         if math.isnan(y):

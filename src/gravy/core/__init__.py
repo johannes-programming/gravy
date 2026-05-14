@@ -2,8 +2,9 @@ import enum
 import functools
 import math
 import tomllib
+from collections.abc import Iterable
 from importlib import resources
-from typing import *
+from typing import Any, Self, cast
 
 import click
 import preparse
@@ -15,21 +16,21 @@ class Util(enum.Enum):
     util = None
 
     @functools.cached_property
-    def data(self: Self) -> dict:
+    def data(self: Self) -> dict[str, Any]:
         "This cached property holds the cfg data."
         text: str
         text = resources.read_text("gravy.core", "cfg.toml")
         return tomllib.loads(text)
 
 
-def score(seq: Iterable) -> float:
+def score(seq: Iterable[object]) -> float:
     "This function calculates the GRAVY score."
-    l: list
-    x: Any
-    y: Any
+    l: list[float]
+    x: object
+    y: float
     l = list()
     for x in seq:
-        y = Util.util.data["values"][str(x)]
+        y = cast(float, Util.util.data["values"][str(x)])
         if not math.isnan(y):
             l.append(y)
     if len(l):
@@ -53,7 +54,7 @@ calculate = score  # for legacy
 @click.help_option("-h", "--help")
 @click.version_option(None, "-V", "--version")
 @click.argument("seq")
-def main(seq: Iterable, f: str) -> None:
+def main(seq: str, f: str) -> None:
     "This command calculates the GRAVY score of seq."
     ans: float
     out: str
