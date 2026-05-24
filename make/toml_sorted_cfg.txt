@@ -1,0 +1,4 @@
+--sort
+--sort
+--key=values
+src/gravy/core/cfg.toml
