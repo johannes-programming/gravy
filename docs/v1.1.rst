@@ -42,8 +42,8 @@ This click command implements the CLI.
     # output: 0.33333
     # the formatting can be changed with the option '--format'
 
-``gravy.score(seq: Iterable) -> float``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``gravy.score(seq: Iterable[object]) -> float``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function calculates the GRAVY score.
 
