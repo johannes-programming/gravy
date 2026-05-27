@@ -1,10 +1,14 @@
+"""Entry point for running all tests."""
+
 import unittest
+from collections.abc import Iterator
+from typing import Self
 
 __all__ = ["test"]
 
 
 def test() -> unittest.TextTestResult:
-    "This function runs all the tests."
+    """Run all the tests."""
     loader: unittest.TestLoader
     tests: unittest.TestSuite
     runner: unittest.TextTestRunner

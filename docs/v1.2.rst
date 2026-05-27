@@ -42,6 +42,9 @@ This click command implements the CLI.
     # output: 0.33333
     # the formatting can be changed with the option '--format'
 
+``gravy.run(seq: Iterable[object], *, format_spec: str = ".5f") -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ``gravy.score(seq: Iterable[object]) -> float``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

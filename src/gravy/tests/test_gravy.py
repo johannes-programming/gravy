@@ -1,12 +1,15 @@
 import unittest
-from typing import *
+from typing import Self
 
 from gravy.core import score
+
+"""Tests for the score function."""
 
 __all__ = ["TestScoreFunction"]
 
 
 class TestScoreFunction(unittest.TestCase):
+    """Tests for the score function with specific sequences."""
 
     def test_valid_sequence(self: Self) -> None:
         "Test a valid sequence with known values."
