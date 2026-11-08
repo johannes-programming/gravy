@@ -32,7 +32,7 @@ license-files = [
 name = "gravy"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.2.0"
+version = "1.2.0.post0"
 
 [project.urls]
 Download = "https://pypi.org/project/gravy/#files"
