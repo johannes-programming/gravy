@@ -45,6 +45,10 @@ This click command implements the CLI.
 ``gravy.run(seq: Iterable[object], *, format_spec: str = ".5f") -> None``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. container:: versionadded
+
+    **Added in version 1.2.**
+
 ``gravy.score(seq: Iterable[object]) -> float``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
