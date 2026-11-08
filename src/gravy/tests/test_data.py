@@ -1,15 +1,16 @@
+from __future__ import annotations
+
+__all__: list[str] = ["TestScoreFunction"]
+
 import enum
 import functools
 import math
 import tomllib
 import unittest
-from collections.abc import Iterator
 from importlib import resources
 from typing import Any, Self
 
 from gravy.core import score
-
-__all__ = ["TestScoreFunction"]
 
 
 class Util(enum.Enum):

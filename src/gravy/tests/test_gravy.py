@@ -1,11 +1,13 @@
+"""Tests for the score function."""
+
+from __future__ import annotations
+
+__all__: list[str] = ["TestScoreFunction"]
+
 import unittest
 from typing import Self
 
 from gravy.core import score
-
-"""Tests for the score function."""
-
-__all__ = ["TestScoreFunction"]
 
 
 class TestScoreFunction(unittest.TestCase):
