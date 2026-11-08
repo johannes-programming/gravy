@@ -1,5 +1,5 @@
 .ONESHELL:
-.PHONY: all add amend beautiful black build clean commit commit-version dist echo isort jacobus py311 py312 py313 py314 py315 pypi rebase reset test toml_sorted upload version 
+.PHONY: all add amend beautiful black build clean commit commit-version dist echo isort jacobus py311 py312 py313 py314 py315 pypi rebase reset test toml_sorted upload version
 SHELL := /bin/zsh
 
 all: beautiful commit-version
@@ -29,8 +29,9 @@ commit-version: add py311
 
 clean:
 	rm -fr 'dist/';
+	rm -fr 'out/';
 
-dist: clean build
+dist: beautiful clean build
 
 echo:
 	echo $(PARAMS);
@@ -40,9 +41,10 @@ isort: py311
 	conda run -n py311 isort . ;
 
 jacobus: py311
-	conda run -n py311 pip install 'jacobus>=2.2,<3' >/dev/null;
+	conda run -n py311 pip install 'jacobus>=2.3,<3' >/dev/null;
 	conda run -n py311 python -m jacobus @make/jacobus.txt;
 	conda run -n py311 python -m jacobus @make/jacobus_empty.txt;
+	cat make/manifest.txt >> MANIFEST.in;
 	conda run -n py311 python -m jacobus @make/jacobus_sort.txt;
 
 py311:
