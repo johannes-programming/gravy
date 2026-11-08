@@ -1,6 +1,9 @@
 """Tests for the run function."""
 
-__all__ = ["TestGreet"]
+from __future__ import annotations
+
+__all__: list[str] = ["TestGreet"]
+
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
