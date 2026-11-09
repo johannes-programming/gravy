@@ -40,7 +40,7 @@ This click command implements the CLI.
     # CLI
     python3 -m gravy CYIQNCPLG
     # output: 0.33333
-    # the formatting can be changed with the option '--format'
+    # the formatting can be changed with the option '--format-spec'
 
 ``gravy.run(seq: Iterable[object], *, format_spec: str = ".5f") -> None``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

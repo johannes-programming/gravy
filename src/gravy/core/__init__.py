@@ -1,17 +1,17 @@
-__all__ = ["calculate", "main", "run", "score"]
+from __future__ import annotations
+
+__all__: list[str] = ["calculate", "main", "parse_args", "run", "score"]
 
 
+import argparse
 import enum
 import functools
 import logging
 import math
 import tomllib
-from collections.abc import Iterable
-from importlib import resources
-from typing import Any, Self, cast
-
-import click
-import preparse
+from collections.abc import Callable, Iterable
+from importlib import metadata, resources
+from typing import Any, Final, Self, cast
 
 
 class Util(enum.Enum):
@@ -27,11 +27,53 @@ class Util(enum.Enum):
         return tomllib.loads(text)
 
 
+def main(args: Iterable[str] | None = None) -> int:
+    """Calculate the GRAVY score of seq."""
+    space: argparse.Namespace
+    try:
+        space = parse_args(args)
+    except SystemExit as exit:
+        if isinstance(exit.code, int):
+            return int(exit.code)
+        else:
+            return int(bool(exit.code))
+    try:
+        run(space.seq, format_spec=space.format_spec)
+    except Exception:
+        logging.exception("failed to calculate GRAVY score")
+        return 1
+    return 0
+
+
+def parse_args(args: Iterable[str] | None = None) -> argparse.Namespace:
+    parser: argparse.ArgumentParser
+    version: str
+    parser = argparse.ArgumentParser(
+        add_help=False,
+        description="This project calculates the GRAVY score.",
+        fromfile_prefix_chars="@",
+        prog="gravy",
+    )
+    parser.add_argument(
+        "--format-spec", default=".5f", help="format of the output"
+    )
+    parser.add_argument("-h", "--help", action="help")
+    version = "%(prog)s, version " + metadata.version("gravy")
+    parser.add_argument("-V", "--version", action="version", version=version)
+    parser.add_argument("seq")
+    return parser.parse_args(args)
+
+
+def run(seq: Iterable[object], *, format_spec: str = ".5f") -> None:
+    """Print the formatted GRAVY score."""
+    print(format(score(seq), format_spec))
+
+
 def score(seq: Iterable[object]) -> float:
     """Calculate the GRAVY score."""
-    values: list[float]
     item: object
     value: float
+    values: list[float]
 
     values = []
 
@@ -46,29 +88,4 @@ def score(seq: Iterable[object]) -> float:
     return float("nan")
 
 
-calculate = score
-
-
-@preparse.PreParser().click()
-@click.command(add_help_option=False)
-@click.option(
-    "--format-spec",
-    "f",
-    help="format of the output",
-    default=".5f",
-    show_default=True,
-)
-@click.help_option("-h", "--help")
-@click.version_option(None, "-V", "--version")
-@click.argument("seq")
-def main(seq: str, f: str) -> None:
-    """Calculate the GRAVY score of seq."""
-    try:
-        run(seq, format_spec=f)
-    except Exception:
-        logging.exception("failed to calculate GRAVY score")
-
-
-def run(seq: Iterable[object], *, format_spec: str = ".5f") -> None:
-    """Print the formatted GRAVY score."""
-    print(format(score(seq), format_spec))
+calculate: Final[Callable[..., float]] = score

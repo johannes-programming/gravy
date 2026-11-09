@@ -1,20 +1,18 @@
 """Entry point for running all tests."""
 
-import unittest
-from collections.abc import Iterator
-from typing import Self
+from __future__ import annotations
 
-__all__ = ["test"]
+__all__: list[str] = ["test"]
+
+import unittest
 
 
 def test() -> unittest.TextTestResult:
     """Run all the tests."""
     loader: unittest.TestLoader
-    tests: unittest.TestSuite
     runner: unittest.TextTestRunner
-    result: unittest.TextTestResult
+    suite: unittest.TestSuite
     loader = unittest.TestLoader()
-    tests = loader.discover(start_dir="gravy.tests")
+    suite = loader.discover(start_dir="gravy.tests")
     runner = unittest.TextTestRunner()
-    result = runner.run(tests)
-    return result
+    return runner.run(suite)
