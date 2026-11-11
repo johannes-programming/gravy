@@ -32,17 +32,17 @@ def main(args: Iterable[str] | None = None) -> int:
     space: argparse.Namespace
     try:
         space = parse_args(args)
+        run(**vars(space))
     except SystemExit as exit:
         if isinstance(exit.code, int):
             return int(exit.code)
         else:
             return int(bool(exit.code))
-    try:
-        run(space.seq, format_spec=space.format_spec)
-    except Exception:
-        logging.exception("failed to calculate GRAVY score")
+    except BaseException as exc:
+        logging.exception(exc)
         return 1
-    return 0
+    else:
+        return 0
 
 
 def parse_args(args: Iterable[str] | None = None) -> argparse.Namespace:

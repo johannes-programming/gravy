@@ -6,4 +6,10 @@ import sys
 
 import gravy.tests
 
-sys.exit(1 - gravy.tests.test().wasSuccessful())
+
+def main() -> int:
+    return int(not gravy.tests.test().wasSuccessful())
+
+
+if __name__ == "__main__":
+    sys.exit(main())
